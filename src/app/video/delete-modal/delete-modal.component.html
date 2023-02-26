@@ -1,0 +1,14 @@
+ <!-- Edit Modal -->
+ <app-modal modalId='deleteModal'>
+    <p class="text-2xl font-bold">Delete Video</p>
+
+    <!-- Form -->
+    <app-alert *ngIf="showAlert" [color]="alertColor">
+        <p>{{alertMsg}}</p>
+    </app-alert>
+    <p class="py-2">Are you sure to delete <b>{{title}}</b> ?</p>
+    <div class="grid grid-cols-3 gap-4 justify-center">
+    <button class="inline-flex justify-center py-2 px-4 border border-transparent 
+    shadow-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none" (click)="onNoClick()">No</button> <button (click)="deleteClip(activeClip)" class="inline-flex justify-center py-2 px-4 border border-transparent 
+    shadow-sm rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none">Yes</button></div>
+ </app-modal>

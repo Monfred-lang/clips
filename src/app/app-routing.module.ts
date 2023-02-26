@@ -19,12 +19,7 @@ const routes: Routes = [
     component: ClipComponent,
     resolve: {
       clip: ClipService
-    },
-    data: {
-      authOnly: true,
-      authGuardPipe: redirectUnauthorizedToHome
-    },
-    canActivate: [AngularFireAuthGuard]
+    }
   },
   {
     path: '',

@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent {
 
+  show = false
+
   constructor(private auth: AuthService) {
 
   }
@@ -38,6 +40,13 @@ export class RegisterComponent {
   })
 
   async register(){
+    if(this.password.value != this.confirm_password.value){
+      this.showAlert = true;
+      this.alertMsg = 'Incorrect Confirm_Password'
+      this.alertColor = 'red'
+      this.inSubmission = false
+    return
+    } 
     this.showAlert = true;
     this.alertMsg = 'Please wait! Your account is being created.'
     this.alertColor = 'blue'

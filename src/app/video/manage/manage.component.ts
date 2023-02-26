@@ -53,6 +53,12 @@ export class ManageComponent implements OnInit {
     this.modal.toggleModal('editModal')
   }
 
+  openDeleteModal($event: Event, clip: IClip){
+    $event.preventDefault();
+    this.activeClip = clip;
+    this.modal.toggleModal('deleteModal')
+  }
+
   update(event: IClip){
     this.clips.forEach((element, index) => {
       if(element.docId === event.docId){
@@ -89,6 +95,17 @@ export class ManageComponent implements OnInit {
 
     alert('Link Copied')
 
+  }
+
+  async deleteClip(clip: IClip) {
+    this.clips.forEach((element, index) => {
+      if(element.docId === clip.docId){
+        this.clips.splice(index,1)
+      }
+    })
+    setTimeout(() => {
+      this.modal.toggleModal('deleteModal')      
+    }, 500);
   }
 
 }

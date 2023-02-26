@@ -40,7 +40,7 @@
           <a (click)="openModal($event, clip)" href="#" class="flex-1 p-2 border-right border-r-2 border-gray-700 transition hover:text-indigo-400">
             <span class="material-icons text-base">build</span>
           </a>
-          <a href="#" (click)="delete($event, clip)" class="flex-1 p-2 rounded-br-2xl transition hover:text-indigo-400">
+          <a href="#" (click)="openDeleteModal($event, clip)" class="flex-1 p-2 rounded-br-2xl transition hover:text-indigo-400">
             <span class="material-icons text-base">delete</span>
           </a>
         </div>
@@ -50,3 +50,4 @@
   </div>
 
  <app-edit [activeClip] = activeClip (update)="update($event)"></app-edit>
+ <app-delete-modal [activeClip]="activeClip" (deleteClipFn)="deleteClip($event)"></app-delete-modal>

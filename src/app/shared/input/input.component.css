@@ -1,0 +1,5 @@
+.passwordVisibility {
+    display: none;
+    position: absolute;
+    background-color: red;
+}
